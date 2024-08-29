@@ -1,0 +1,239 @@
+/* Reset básico para remover margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos básicos do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Títulos principais */
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #333;
+    transition: color 0.3s ease;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1:hover {
+    color: #ae00ff;
+}
+
+/* Estilo da introdução */
+.intro {
+    margin-bottom: 30px;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo da tabela periódica */
+.table {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 5px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .table {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilo de cada elemento da tabela */
+.element {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.element:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+/* Número atômico */
+.element .number {
+    font-size: 14px;
+    color: #ffffff;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: color 0.3s ease;
+}
+
+.element:hover .number {
+    color: #000000;
+}
+
+/* Símbolo químico */
+.element .symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.element:hover .symbol {
+    color: #000000;
+}
+
+/* Nome do elemento */
+.element .name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.element:hover .name {
+    color: #000000;
+}
+
+/* Peso atômico */
+.element .weight {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.element:hover .weight {
+    color: #000000;
+}
+
+/* Seção de detalhes sobre os elementos */
+.details {
+    margin-top: 30px;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.details h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.details h2:hover {
+    color: #ae00ff;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.details p strong {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.details p:hover {
+    color: #ae00ff;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .table {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    .details {
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
+/* Estilo para as imagens dos elementos */
+.element img {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço em branco abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem dentro da célula */
+}
+
+/* Estilo para as células dos elementos para garantir o alinhamento do texto */
+.element {
+    text-align: center; /* Centraliza o texto e a imagem dentro da célula */
+    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    border: 1px solid #ddd; /* Adiciona uma borda fina para melhorar a visualização */
+}
